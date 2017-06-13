@@ -1,5 +1,7 @@
 <h1>Welcome User!</h1>
 
-
+<% if logged_in? %>
+  <a href="/posts/new">submit a post</a>
+<% end %>
 <!-- list all posts by user -->
 <!-- list all comments by user -->
