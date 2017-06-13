@@ -8,18 +8,4 @@
   <% end %>
 </ul>
 
-<form class="register" method="post" action="/register">
-  <label>Name:</label>
-  <input type="text" name="user[name]">
-  <br>
-  <br>
-  <label>Email:</label>
-  <input type="text" name="user[email]">
-  <br>
-  <br>
-  <label>Password:</label>
-  <input type="password" name="user[password]">
-  <br>
-  <br>
-  <input type="submit" value="register">
-</form>
+<%= erb :'/users/_register_form', layout: false %>

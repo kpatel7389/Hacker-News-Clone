@@ -1,7 +1,17 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("nav").on("click", ".register-link", function(event) {
+    event.preventDefault();
+    console.log("working");
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    var link = $(this).attr("href");
+    console.log(link);
+    var request = $.ajax({
+      url: link,
+      method: "GET"
+    })
+    request.done(function(response) {
+      $('.register').hide();
+      $('.register-link').after(response);
+    })
+  })
 });

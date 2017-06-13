@@ -3,7 +3,11 @@ get '/users' do
 end
 
 get '/register' do
-  erb :'users/register'
+  if request.xhr?
+    erb :'/users/_register_form', layout: false
+  else
+    erb :'users/register'
+  end
 end
 
 post '/register' do
