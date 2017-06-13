@@ -14,4 +14,17 @@ $(document).ready(function() {
       $('.register-link').after(response);
     })
   })
+  $("nav").on("click", ".login-link", function(event) {
+    event.preventDefault();
+
+    var link = $(this).attr("href");
+    var request = $.ajax({
+      url: link,
+      method: "GET"
+    })
+    request.done(function(response) {
+      $('.login').hide();
+      $('.login-link').after(response);
+    })
+  })
 });

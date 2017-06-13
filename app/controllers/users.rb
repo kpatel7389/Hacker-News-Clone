@@ -23,7 +23,11 @@ end
 
 get '/login' do
   @user = User.find_by(id: params[:id])
-  erb :'users/login'
+  if request.xhr?
+    erb :'/users/_login_form', layout: false, locals: {user: @user}
+  else
+    erb :'users/login'
+  end
 end
 
 post '/login' do
