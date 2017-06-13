@@ -1,5 +1,6 @@
-<h1><%= @post.title %></h1>
+<div class="containter">
 
+<h1><%= @post.title %></h1>
 
 <% if logged_in? %>
   <form method="post" action="/comments/new">
@@ -18,6 +19,7 @@
     </li>
   <% end %>
 </ul>
+</div>
 
 
 
