@@ -48,6 +48,19 @@ get '/users/:id' do
   # end
 end
 
+get '/users/:id/comments' do
+  @user = User.find(params[:id])
+  @user_comments = @user.comments
+  erb :'users/comments'
+end
+
+get '/users/:id/posts' do
+  @user = User.find(params[:id])
+  @post = Post.find(params[:id])
+  @user_posts = @user.posts
+  erb :'users/posts'
+end
+
 
 
 

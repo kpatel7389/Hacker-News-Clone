@@ -1,7 +1,21 @@
 <h1>Welcome User!</h1>
 
 <% if logged_in? %>
+<p>Click below to submit a post!</p>
   <a href="/posts/new">submit a post</a>
 <% end %>
-<!-- list all posts by user -->
-<!-- list all comments by user -->
+<br>
+<br>
+<ul>
+
+  <li class="comments_link">
+    <p>View your comments!</p>
+    <a href="/users/<%= @user.id %>/comments">comments</a>
+  </li>
+  <br>
+
+  <li class="posts_link">
+    <p>View your posts!</p>
+    <a href="/users/<%= @user.id %>/posts">posts</a>
+  </li>
+</ul>

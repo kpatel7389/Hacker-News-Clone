@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Comments by <%= @user.name %></h1>
+  <ul>
+    <% @user_comments.each do |comment| %>
+      <li class="comment_element">
+        <a class="comment_url" href="/posts/<%= comment.post_id%>"><%= Post.find(comment.post_id).title %></a>
+        <p class="comment">
+          <%= comment.body %>
+        </p>
+      </li>
+      <% end %>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Posts by <%= @user.name %></h1>
+
+  <p>Click on your name below to go to your profile!</p>
+  <a class="post_url" href="/users/<%= @post.id %>"><%= @user.name %></a>
+
+  <ul>
+    <% @user_posts.each do |post| %>
+
+      <li class="comment_element">
+        <%= post.title %>
+      </li>
+    <% end %>
+  </ul>
+</div>
