@@ -3,7 +3,11 @@ get '/posts' do
 end
 
 get '/posts/new' do
-  erb :'posts/new'
+  if request.xhr?
+    erb :'/posts/_post_form', layout: false
+  else
+    erb :'posts/new'
+  end
 end
 
 post '/posts' do

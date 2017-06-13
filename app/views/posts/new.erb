@@ -1,7 +1,3 @@
 <h1>Create a post!</h1>
 
-<form class="post_form" method="post" action="/posts">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <input type="submit" value="post something">
-</form>
+<%= erb :'/posts/_post_form', layout: false %>

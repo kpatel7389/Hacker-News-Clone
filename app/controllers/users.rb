@@ -49,11 +49,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
-  # if authorized?(@user.id)
     erb :'users/show'
-  # else
-    # redirect "/"
-  # end
 end
 
 get '/users/:id/comments' do

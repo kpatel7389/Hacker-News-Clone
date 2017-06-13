@@ -10,7 +10,7 @@ $(document).ready(function() {
       method: "GET"
     })
     request.done(function(response) {
-      $('.register').hide();
+      $('.register').remove();
       $('.register-link').after(response);
     })
   })
@@ -26,5 +26,23 @@ $(document).ready(function() {
       $('.login').hide();
       $('.login-link').after(response);
     })
+  })
+
+  $(".new-post-link").on("click", function(event) {
+    event.preventDefault();
+    // console.log("working");
+    var link = $(this).attr("href");
+    // console.log(link);
+
+    var request = $.ajax({
+      url: link,
+      method: "GET"
+    })
+    request.done(function(response) {
+      console.log(response);
+      $('.post_form').hide();
+      $('.new-post-link').after(response);
+    })
+
   })
 });
