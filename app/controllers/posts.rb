@@ -19,6 +19,7 @@ end
 get '/posts/:id' do
   session[:post_id] = params[:id]
   @post = Post.find(params[:id])
+  @comments = @post.comments
   erb :'posts/show'
 end
 

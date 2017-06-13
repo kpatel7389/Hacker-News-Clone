@@ -1,4 +1,18 @@
 <h1><%= @post.title %></h1>
 
+<form method="post" action="/comments/new">
+  <label>Comment:</label>
+  <input type="text" name="body">
+  <input type="submit" value="comment">
+</form>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <p><%= comment.body %></p>
+      Commented By: <span><%= User.find(comment.user_id).name %></span>
+    </li>
+  <% end %>
+</ul>
 
 
