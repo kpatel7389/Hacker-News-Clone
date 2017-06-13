@@ -1,2 +1,12 @@
-<h1>hi</h1>
+<h1>Homepage</h1>
 
+<!-- list all post here -->
+
+<% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+<% end %>
+  <br>
+  <br>
+<% if logged_in? %>
+  <a href="/posts/new">submit a post</a>
+<% end %>

@@ -2,8 +2,6 @@ get '/users' do
   erb :index
 end
 
-
-
 get '/register' do
   erb :'users/register'
 end
@@ -19,14 +17,10 @@ post '/register' do
   end
 end
 
-
-
 get '/login' do
   @user = User.find_by(id: params[:id])
   erb :'users/login'
 end
-
-
 
 post '/login' do
    @user = User.authenticate(params[:email], params[:password])
@@ -38,7 +32,6 @@ post '/login' do
     erb :'users/login'
   end
 end
-
 
 
 delete '/logout' do
