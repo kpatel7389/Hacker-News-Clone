@@ -55,9 +55,9 @@ $(document).ready(function() {
     request.done(function(response) {
       $(".comments_link").hide();
       $(".comment-elements").append(response);
-
     })
   })
+
   $(".posts_link").on("click", function(event) {
     event.preventDefault();
 
@@ -72,7 +72,6 @@ $(document).ready(function() {
       $(".posts_link").hide();
       $(".post-elements").append(response);
     })
-
   })
 });
 
