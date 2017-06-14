@@ -3,13 +3,6 @@
 
   <p>Click on your name below to go to your profile!</p>
   <a class="post_url" href="/users/<%= @post.id %>"><%= @user.name %></a>
+  <%= erb :'/users/_posts', layout: false, locals: {user_posts: @user_posts}  %>
 
-  <ul>
-    <% @user_posts.each do |post| %>
-
-      <li class="comment_element">
-        <%= post.title %>
-      </li>
-    <% end %>
-  </ul>
 </div>

@@ -66,7 +66,11 @@ get '/users/:id/posts' do
   @user = User.find(params[:id])
   @post = Post.find(params[:id])
   @user_posts = @user.posts
-  erb :'users/posts'
+  if request.xhr?
+    erb :'/users/_posts', layout: false, locals: {user_posts: @user_posts}
+  else
+    erb :'users/posts'
+  end
 end
 
 

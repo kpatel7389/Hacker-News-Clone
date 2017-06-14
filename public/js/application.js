@@ -53,13 +53,31 @@ $(document).ready(function() {
       method: "GET"
     })
     request.done(function(response) {
-
-      $(".comments_link").after(response);
       $(".comments_link").hide();
-
+      $(".comment-elements").append(response);
 
     })
   })
+  $(".posts_link").on("click", function(event) {
+    event.preventDefault();
 
+    var link = $(this).attr("href");
+    var method = 'get';
 
+    var request = $.ajax({
+      url: link,
+      method: method
+    })
+    request.done(function(response) {
+      $(".posts_link").hide();
+      $(".post-elements").append(response);
+    })
+
+  })
 });
+
+
+
+
+
+
