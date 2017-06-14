@@ -55,7 +55,11 @@ end
 get '/users/:id/comments' do
   @user = User.find(params[:id])
   @user_comments = @user.comments
-  erb :'users/comments'
+  if request.xhr?
+    erb :'/users/_comments', layout: false, locals: {user_comments: @user_comments}
+  else
+    erb :'users/comments'
+  end
 end
 
 get '/users/:id/posts' do

@@ -43,6 +43,23 @@ $(document).ready(function() {
       $('.post_form').hide();
       $('.new-post-link').after(response);
     })
-
   })
+
+  $(".comments_link").on("click", function(event) {
+    event.preventDefault();
+    var link = $(this).attr("href");
+    var request = $.ajax({
+      url: link,
+      method: "GET"
+    })
+    request.done(function(response) {
+
+      $(".comments_link").after(response);
+      $(".comments_link").hide();
+
+
+    })
+  })
+
+
 });
