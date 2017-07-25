@@ -69,6 +69,10 @@ convention. Here are some routes to get you thinking in a RESTful way:
 
 Implement all the views.  Don't worry about AJAX at first.
 
+### Release 3: Tests
+
+Write some tests because you know, they are important. Do you know why they are important? Find out. Check out Rack::Test, Cucumber, Rspec, Capybara. What are these things?
+
 <!-- ## Optimize Your Learning -->
 
 
