@@ -1,0 +1,24 @@
+<div id="profile-containter">
+
+  <h1>Welcome User!</h1>
+
+  <% if logged_in? %>
+  <p>Click below to submit a post!</p>
+    <a class="new-post-link" href="/posts/new">submit a post</a>
+  <% end %>
+  <br>
+  <br>
+  <ul>
+
+    <li class="comment-elements">
+      <p>View your comments!</p>
+      <a class="comments_link" href="/users/<%= @user.id %>/comments">comments</a>
+    </li>
+    <br>
+
+    <li class="post-elements">
+      <p>View your posts!</p>
+      <a class="posts_link" href="/users/<%= @user.id %>/posts">posts</a>
+    </li>
+  </ul>
+</div>

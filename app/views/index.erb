@@ -1,0 +1,15 @@
+<div class="containter">
+
+  <h1>Welcome to SuperHacker News!!!</h1>
+
+  <!-- list all post here -->
+  <ul>
+    <% @posts.each do |post| %>
+      <li class="post_element">
+        <a class="post_url" href="/posts/<%= post.id %>"><%= post.title %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+

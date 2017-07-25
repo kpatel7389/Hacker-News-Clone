@@ -1,0 +1,4 @@
+<div class="container">
+  <h1>Comments by <%= @user.name %></h1>
+  <%= erb :'/users/_comments', layout: false, locals: {user_comments: @user_comments} %>
+</div>

@@ -1,0 +1,24 @@
+<div class="containter">
+
+  <h1><%= @post.title %></h1>
+
+  <% if logged_in? %>
+    <form method="post" action="/comments/new">
+      <label>Comment:</label>
+      <input type="text" name="body">
+      <input type="submit" value="comment">
+    </form>
+  <% end %>
+
+  <ul>
+    <% @comments.each do |comment| %>
+      <li class="comment_element">
+        <p class="comment_url"><%= comment.body %></p>
+        Commented By: <span class="author"><%= User.find(comment.user_id).name %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+
